@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Smart Tools | Simple & Fast Online Calculators</title>
+<meta name="description" content="Smart Tools offers free, fast, and easy-to-use online calculators and utility tools." />
+<meta name="keywords" content="Smart Tools, Online Calculator, Unit Converter, BMI, Password Generator" />
+<meta property="og:site_name" content="Smart Tools" />
+<meta property="og:title" content="Smart Tools - Your Daily Utility Hub" />
+<meta property="og:description" content="Free online utility tools: calculators, converters, BMI and more." />
+<meta property="og:type" content="website" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Outfit:wght@500;700;800;900&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          sans: ['Figtree','system-ui','sans-serif'],
+          display: ['Outfit','system-ui','sans-serif'],
+        },
+        colors: {
+          navy: { 950:'#070d1f', 900:'#0b1430', 800:'#101c44', 700:'#16285c', 600:'#1e3a8a' },
+          brand: { DEFAULT:'#3b82f6', light:'#60a5fa', glow:'#7dd3fc' },
+        },
+        animation: {
+          meteor:'meteor 5s linear infinite',
+          'grid-flow':'grid-flow 20s linear infinite',
+          float:'float 6s ease-in-out infinite',
+          blob:'blob 14s ease-in-out infinite',
+          glow:'glow 3s ease-in-out infinite',
+        },
+        keyframes: {
+          meteor:{'0%':{transform:'rotate(215deg) translateX(0)',opacity:1},'70%':{opacity:1},'100%':{transform:'rotate(215deg) translateX(-700px)',opacity:0}},
+          'grid-flow':{'0%':{transform:'translateY(0)'},'100%':{transform:'translateY(40px)'}},
+          float:{'0%,100%':{transform:'translateY(0)'},'50%':{transform:'translateY(-12px)'}},
+          blob:{'0%,100%':{transform:'translate(0,0) scale(1)'},'33%':{transform:'translate(30px,-30px) scale(1.1)'},'66%':{transform:'translate(-20px,20px) scale(0.95)'}},
+          glow:{'0%,100%':{boxShadow:'0 0 20px -5px rgba(59,130,246,.5)'},'50%':{boxShadow:'0 0 40px -5px rgba(59,130,246,.9)'}},
+        }
+      }
+    }
+  }
+</script>
+<style>
+  body {
+    font-family:'Figtree',system-ui,sans-serif;
+    background:
+      radial-gradient(1200px 600px at 80% -10%, rgba(59,130,246,.25), transparent 60%),
+      radial-gradient(900px 500px at -10% 110%, rgba(125,211,252,.15), transparent 60%),
+      linear-gradient(180deg,#070d1f 0%, #0b1430 50%, #0a1228 100%);
+    color:#e6edf7;
+    -webkit-font-smoothing:antialiased;
+    min-height:100vh;
+  }
+  h1,h2,h3,h4 { font-family:'Outfit',system-ui,sans-serif; letter-spacing:-.02em; }
+  .text-gradient { background:linear-gradient(135deg,#7dd3fc,#60a5fa,#a78bfa); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  .bg-gradient-brand { background:linear-gradient(135deg,#3b82f6,#60a5fa); }
+  .grid-bg { background-image:linear-gradient(to right,rgba(125,211,252,.10) 1px,transparent 1px),linear-gradient(to bottom,rgba(125,211,252,.10) 1px,transparent 1px); background-size:44px 44px; }
+  .glass { background:rgba(16,28,68,.55); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border:1px solid rgba(125,211,252,.18); }
+  .glass-strong { background:rgba(11,20,48,.7); backdrop-filter:blur(16px); border:1px solid rgba(125,211,252,.22); }
+  .shadow-glow { box-shadow:0 20px 60px -18px rgba(59,130,246,.55); }
+  .shadow-soft { box-shadow:0 10px 40px -12px rgba(59,130,246,.35); }
+  .meteor { position:absolute; width:2px; height:2px; border-radius:9999px; background:#fff; transform:rotate(215deg); }
+  .meteor::before { content:''; position:absolute; top:50%; transform:translateY(-50%); width:60px; height:1px; background:linear-gradient(to right, rgba(255,255,255,.85), transparent); }
+  .hairline { background:linear-gradient(90deg,transparent,rgba(125,211,252,.4),transparent); height:1px; }
+  html { scroll-behavior:smooth; }
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<header class="sticky top-0 z-50 w-full border-b border-white/10 bg-navy-950/70 backdrop-blur-xl">
+  <div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+    <a href="#" class="flex items-center gap-2 group">
+      <div class="relative">
+        <div class="absolute inset-0 rounded-lg bg-brand/40 blur-md"></div>
+        <div class="relative flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-brand text-white">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 12-8.373 8.373a1 1 0 1 1-3-3L12 9"/><path d="m18 15 4-4"/><path d="m21.5 11.5-1.914-1.914A2 2 0 0 1 19 8.172V7l-2.26-2.26a6 6 0 0 0-4.202-1.756L9 2.96l.92.82A6.18 6.18 0 0 1 12 8.4V10l2 2h1.172a2 2 0 0 1 1.414.586L18.5 14.5"/></svg>
+        </div>
+      </div>
+      <span class="text-xl font-bold tracking-tight font-display text-white">Smart<span class="text-gradient">Tools</span></span>
+    </a>
+    <nav class="hidden md:flex items-center gap-8">
+      <a href="#home" class="text-sm font-semibold text-slate-300 hover:text-white">Home</a>
+      <a href="#tools" class="text-sm font-semibold text-slate-300 hover:text-white">Tools</a>
+      <a href="#why" class="text-sm font-semibold text-slate-300 hover:text-white">Why Us</a>
+      <a href="#contact" class="text-sm font-semibold text-slate-300 hover:text-white">Contact</a>
+    </nav>
+    <a href="#contact" class="inline-flex items-center gap-1.5 text-sm font-semibold px-4 py-2 rounded-lg bg-gradient-brand text-white shadow-soft hover:shadow-glow transition-all">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="10" r="3"/><path d="M7 20.662V19a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v1.662"/></svg>
+      Sign in
+    </a>
+  </div>
+</header>
+
+<!-- Hero -->
+<section id="home" class="relative overflow-hidden py-24 sm:py-32 lg:py-40">
+  <div class="absolute inset-0 grid-bg opacity-40 animate-grid-flow" style="mask-image:radial-gradient(ellipse at center, white, transparent 70%);"></div>
+  <div class="absolute top-1/4 -left-20 h-72 w-72 rounded-full bg-brand/25 blur-3xl animate-blob"></div>
+  <div class="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-sky-400/20 blur-3xl animate-blob" style="animation-delay:3s;"></div>
+  <div id="meteors" class="pointer-events-none absolute inset-0 overflow-hidden"></div>
+
+  <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
+    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass text-white text-sm font-medium mb-6 animate-float">
+      <span class="h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span> 100% Free • No Sign-up Required
+    </div>
+    <h1 class="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white font-display leading-[1.05]">
+      Simple, fast, and accurate<br>
+      <span class="text-gradient">tools for your daily needs.</span>
+    </h1>
+    <p class="mx-auto mt-8 max-w-2xl text-lg sm:text-xl text-slate-300 leading-relaxed">
+      A curated collection of free online utility tools designed to save you time. Built with precision, designed with care.
+    </p>
+    <div class="mt-12 flex flex-wrap justify-center gap-4">
+      <a href="#tools" class="group inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-brand px-8 py-4 text-base font-semibold text-white shadow-glow hover:-translate-y-0.5 transition-all">
+        Explore Tools →
+      </a>
+      <a href="#why" class="inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 glass px-8 py-4 text-base font-semibold text-white hover:bg-white/10 transition-all">
+        Why Smart Tools?
+      </a>
+    </div>
+    <div class="mt-16 flex justify-center gap-10 text-slate-400 text-sm">
+      <div><span class="text-3xl font-bold text-white font-display block">6+</span>Tools</div>
+      <div class="border-l border-white/15"></div>
+      <div><span class="text-3xl font-bold text-white font-display block">100%</span>Free</div>
+      <div class="border-l border-white/15"></div>
+      <div><span class="text-3xl font-bold text-white font-display block">0ms</span>Lag</div>
+    </div>
+  </div>
+</section>
+
+<div class="hairline max-w-5xl mx-auto"></div>
+
+<!-- Tools -->
+<section id="tools" class="py-20 sm:py-28 relative">
+  <div class="absolute inset-0 grid-bg opacity-20" style="mask-image:radial-gradient(ellipse at center, white, transparent 60%);"></div>
+  <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <div class="inline-block px-3 py-1 rounded-full bg-brand/15 text-brand-light text-xs font-bold tracking-wide uppercase mb-4 border border-brand/30">Featured Tools</div>
+      <h2 class="text-4xl sm:text-5xl font-bold tracking-tight font-display text-white">
+        Everything you need, <span class="text-gradient">in one place</span>
+      </h2>
+      <p class="mt-4 text-lg text-slate-300 max-w-2xl mx-auto">Each tool is built with precision and ease of use in mind.</p>
+    </div>
+    <div id="tool-grid" class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"></div>
+  </div>
+</section>
+
+<!-- Why -->
+<section id="why" class="py-20">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-14">
+      <h2 class="text-4xl font-bold font-display text-white">Why <span class="text-gradient">Smart Tools</span>?</h2>
+    </div>
+    <div id="why-grid" class="grid grid-cols-1 gap-6 sm:grid-cols-3"></div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-20">
+  <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+    <div class="relative overflow-hidden rounded-3xl glass-strong p-12 sm:p-16 text-center shadow-glow">
+      <div class="absolute inset-0 grid-bg opacity-20"></div>
+      <div class="absolute -top-20 -right-20 h-64 w-64 rounded-full bg-brand/30 blur-3xl"></div>
+      <div class="relative">
+        <h2 class="text-3xl sm:text-4xl font-bold text-white font-display">Ready to get started?</h2>
+        <p class="mt-3 text-slate-300 max-w-xl mx-auto">Pick any tool and start saving time today. No sign-up required.</p>
+        <a href="#tools" class="mt-8 inline-flex items-center gap-2 rounded-xl bg-gradient-brand px-8 py-4 text-base font-semibold text-white shadow-glow hover:-translate-y-0.5 transition-all">Start using tools →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer id="contact" class="border-t border-white/10 bg-navy-950/80">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14">
+    <div class="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
+      <div class="space-y-4">
+        <div class="flex items-center gap-2">
+          <div class="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-brand">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 12-8.373 8.373a1 1 0 1 1-3-3L12 9"/><path d="m18 15 4-4"/></svg>
+          </div>
+          <span class="text-xl font-bold font-display text-white">Smart Tools</span>
+        </div>
+        <p class="text-sm text-slate-400 leading-relaxed">Your go-to hub for simple, fast, and accurate online utility tools.</p>
+      </div>
+      <div>
+        <h4 class="text-sm font-bold uppercase tracking-wider text-white mb-4 font-display">Quick Links</h4>
+        <ul class="space-y-2.5 text-sm text-slate-400">
+          <li><a href="#home" class="hover:text-white">Home</a></li>
+          <li><a href="#tools" class="hover:text-white">Tools</a></li>
+          <li><a href="#why" class="hover:text-white">Why Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-sm font-bold uppercase tracking-wider text-white mb-4 font-display">Tools</h4>
+        <ul class="space-y-2.5 text-sm text-slate-400">
+          <li>Calculator</li><li>Unit Converter</li><li>BMI Calculator</li><li>Password Generator</li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-sm font-bold uppercase tracking-wider text-white mb-4 font-display">Contact</h4>
+        <ul class="space-y-3 text-sm">
+          <li><a href="mailto:nomansalehofficial@gmail.com" class="flex items-center gap-2 text-slate-300 hover:text-white break-all">✉️ nomansalehofficial@gmail.com</a></li>
+          <li><a href="https://wa.me/923019374170" target="_blank" rel="noopener" class="flex items-center gap-2 text-slate-300 hover:text-white">💬 +92 301 9374170</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="mt-12 border-t border-white/10 pt-8 text-center">
+      <p class="text-sm text-slate-500">&copy; 2026 Smart Tools. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const m=document.getElementById('meteors');
+  for(let i=0;i<22;i++){const s=document.createElement('span');s.className='meteor';s.style.top=(Math.random()*30)+'%';s.style.left=(Math.random()*100)+'%';s.style.animation=`meteor ${4+Math.random()*4}s linear ${Math.random()*4}s infinite`;m.appendChild(s);}
+  const tools=[
+    {t:'Calculator',d:'Powerful standard calculator for daily math.',tag:'Popular',i:'🧮'},
+    {t:'Unit Converter',d:'Length, weight, temperature in a flash.',tag:'Essential',i:'⇄'},
+    {t:'BMI Calculator',d:'Track your health with accurate BMI.',tag:'Health',i:'❤️'},
+    {t:'Age Calculator',d:'Exact age in years, months & days.',tag:'New',i:'🎂'},
+    {t:'Currency Converter',d:'Live exchange rates for 150+ currencies.',tag:'Live',i:'💵'},
+    {t:'Password Generator',d:'Strong, secure random passwords.',tag:'Secure',i:'🔐'},
+  ];
+  document.getElementById('tool-grid').innerHTML=tools.map(x=>`
+    <div class="group relative overflow-hidden rounded-2xl glass p-7 shadow-soft hover:shadow-glow hover:-translate-y-1 hover:border-brand/50 transition-all cursor-pointer">
+      <div class="absolute -top-16 -right-16 h-40 w-40 rounded-full bg-brand/20 blur-3xl opacity-0 group-hover:opacity-100 transition"></div>
+      <div class="relative flex items-start justify-between mb-5">
+        <div class="flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-brand text-white text-2xl shadow-soft">${x.i}</div>
+        <span class="text-[10px] font-bold tracking-wider uppercase px-2.5 py-1 rounded-full bg-white/10 text-slate-200 border border-white/10">${x.tag}</span>
+      </div>
+      <h3 class="relative text-xl font-bold font-display text-white group-hover:text-brand-light transition">${x.t}</h3>
+      <p class="relative mt-2 text-sm text-slate-300 leading-relaxed">${x.d}</p>
+      <div class="relative mt-5 flex items-center text-sm font-semibold text-brand-light">Open Tool →</div>
+    </div>`).join('');
+  const why=[
+    {t:'Lightning Fast',d:'All tools load instantly and compute results in real-time.',i:'⚡'},
+    {t:'100% Private',d:'Calculations happen in your browser. No data leaves your device.',i:'🛡️'},
+    {t:'Always Free',d:'Every tool, every feature — completely free, no ads.',i:'✨'},
+  ];
+  document.getElementById('why-grid').innerHTML=why.map(x=>`
+    <div class="glass rounded-2xl p-8 text-center hover:shadow-glow transition-all">
+      <div class="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-brand text-white text-3xl shadow-soft animate-glow">${x.i}</div>
+      <h3 class="text-xl font-bold font-display text-white">${x.t}</h3>
+      <p class="mt-3 text-slate-300">${x.d}</p>
+    </div>`).join('');
+</script>
+</body>
+</html>
